@@ -1,0 +1,11 @@
+[package]
+name = "async-timer"
+version = "0.0.0"
+authors = ["Brian Bowman <seeker14491@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+crossbeam-channel = "0.3.8"
+futures-preview = { version = "0.3.0-alpha.17", features = ["compat"] }
+tokio-timer = "0.2.11"
+tokio-executor = "0.1.8"
