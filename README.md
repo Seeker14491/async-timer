@@ -1,6 +1,6 @@
 # async-timer
 
-### [Docs](https://seeker14491.github.io/async-timer/async-timer)
+### [Docs](https://seeker14491.github.io/async-timer/async_timer)
 
 ## License
 
