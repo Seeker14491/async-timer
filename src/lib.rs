@@ -67,7 +67,10 @@ impl TimerProvider {
     }
 
     /// Creates a future that completes at the specified instant in time.
-    pub fn delay(&self, deadline: Instant) -> impl Future<Output = Result<(), Error>> + Unpin {
+    pub fn delay(
+        &self,
+        deadline: Instant,
+    ) -> impl Future<Output = Result<(), Error>> + Send + Unpin {
         self.0.timer_handle.delay(deadline).compat()
     }
 
@@ -76,7 +79,7 @@ impl TimerProvider {
     pub fn delay_from_now(
         &self,
         duration: Duration,
-    ) -> impl Future<Output = Result<(), Error>> + Unpin {
+    ) -> impl Future<Output = Result<(), Error>> + Send + Unpin {
         self.delay(Instant::now() + duration)
     }
 
